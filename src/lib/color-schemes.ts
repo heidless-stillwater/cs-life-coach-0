@@ -1,0 +1,350 @@
+// Inspired by https://www.figma.com/community/file/1065604674393325609/shadcn-ui-color-theme-generator
+
+const hexToHsl = (hex: string): string => {
+  let r = 0, g = 0, b = 0;
+  if (hex.length === 4) {
+    r = parseInt(hex[1] + hex[1], 16);
+    g = parseInt(hex[2] + hex[2], 16);
+    b = parseInt(hex[3] + hex[3], 16);
+  } else if (hex.length === 7) {
+    r = parseInt(hex[1] + hex[2], 16);
+    g = parseInt(hex[3] + hex[4], 16);
+    b = parseInt(hex[5] + hex[6], 16);
+  }
+  r /= 255; g /= 255; b /= 255;
+  const max = Math.max(r, g, b), min = Math.min(r, g, b);
+  let h = 0, s = 0, l = (max + min) / 2;
+  if (max !== min) {
+    const d = max - min;
+    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+    switch (max) {
+      case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+      case g: h = (b - r) / d + 2; break;
+      case b: h = (r - g) / d + 4; break;
+    }
+    h /= 6;
+  }
+  return `${Math.round(h * 360)} ${Math.round(s * 100)}% ${Math.round(l * 100)}%`;
+};
+
+type ThemeColors = {
+  background: string;
+  foreground: string;
+  card: string;
+  "card-foreground": string;
+  popover: string;
+  "popover-foreground": string;
+  primary: string;
+  "primary-foreground": string;
+  secondary: string;
+  "secondary-foreground": string;
+  muted: string;
+  "muted-foreground": string;
+  accent: string;
+  "accent-foreground": string;
+  destructive: string;
+  "destructive-foreground": string;
+  border: string;
+  input: string;
+  ring: string;
+};
+
+export type ColorScheme = {
+  name: string;
+  label: string;
+  colors: {
+    light: ThemeColors;
+    dark: ThemeColors;
+  };
+};
+
+export const colorSchemes: ColorScheme[] = [
+  {
+    name: 'COLOR_SCHEME_1',
+    label: 'Indigo & Purple',
+    colors: {
+      light: {
+        background: hexToHsl("#FFFFFF"),
+        foreground: hexToHsl("#2D3748"),
+        card: hexToHsl("#FFFFFF"),
+        "card-foreground": hexToHsl("#2D3748"),
+        popover: hexToHsl("#FFFFFF"),
+        "popover-foreground": hexToHsl("#2D3748"),
+        primary: hexToHsl("#5A67D8"),
+        "primary-foreground": hexToHsl("#F7FAFC"),
+        secondary: hexToHsl("#F7FAFC"),
+        "secondary-foreground": hexToHsl("#2D3748"),
+        muted: hexToHsl("#F7FAFC"),
+        "muted-foreground": hexToHsl("#718096"),
+        accent: hexToHsl("#5A67D8"),
+        "accent-foreground": hexToHsl("#F7FAFC"),
+        destructive: hexToHsl("#E53E3E"),
+        "destructive-foreground": hexToHsl("#F7FAFC"),
+        border: hexToHsl("#E2E8F0"),
+        input: hexToHsl("#E2E8F0"),
+        ring: hexToHsl("#805AD5"),
+      },
+      dark: {
+        background: hexToHsl("#1A202C"),
+        foreground: hexToHsl("#F7FAFC"),
+        card: hexToHsl("#1A202C"),
+        "card-foreground": hexToHsl("#F7FAFC"),
+        popover: hexToHsl("#1A202C"),
+        "popover-foreground": hexToHsl("#F7FAFC"),
+        primary: hexToHsl("#805AD5"),
+        "primary-foreground": hexToHsl("#F7FAFC"),
+        secondary: hexToHsl("#2D3748"),
+        "secondary-foreground": hexToHsl("#F7FAFC"),
+        muted: hexToHsl("#2D3748"),
+        "muted-foreground": hexToHsl("#A0AEC0"),
+        accent: hexToHsl("#805AD5"),
+        "accent-foreground": hexToHsl("#F7FAFC"),
+        destructive: hexToHsl("#FC8181"),
+        "destructive-foreground": hexToHsl("#1A202C"),
+        border: hexToHsl("#2D3748"),
+        input: hexToHsl("#2D3748"),
+        ring: hexToHsl("#5A67D8"),
+      },
+    },
+  },
+  {
+    name: 'COLOR_SCHEME_2',
+    label: 'Green & Blue',
+    colors: {
+      light: {
+        background: hexToHsl("#EBF4FA"),
+        foreground: hexToHsl("#344454"),
+        card: hexToHsl("#FFFFFF"),
+        "card-foreground": hexToHsl("#344454"),
+        popover: hexToHsl("#FFFFFF"),
+        "popover-foreground": hexToHsl("#344454"),
+        primary: hexToHsl("#05AD15"),
+        "primary-foreground": hexToHsl("#FFFFFF"),
+        secondary: hexToHsl("#D7E0E8"),
+        "secondary-foreground": hexToHsl("#344454"),
+        muted: hexToHsl("#D7E0E8"),
+        "muted-foreground": hexToHsl("#6C7A89"),
+        accent: hexToHsl("#58B0E3"),
+        "accent-foreground": hexToHsl("#FFFFFF"),
+        destructive: hexToHsl("#E53E3E"),
+        "destructive-foreground": hexToHsl("#FFFFFF"),
+        border: hexToHsl("#D7E0E8"),
+        input: hexToHsl("#D7E0E8"),
+        ring: hexToHsl("#05AD15"),
+      },
+      dark: {
+        background: hexToHsl("#141C24"),
+        foreground: hexToHsl("#EBF4FA"),
+        card: hexToHsl("#1F2933"),
+        "card-foreground": hexToHsl("#EBF4FA"),
+        popover: hexToHsl("#1F2933"),
+        "popover-foreground": hexToHsl("#EBF4FA"),
+        primary: hexToHsl("#05AD15"),
+        "primary-foreground": hexToHsl("#EBF4FA"),
+        secondary: hexToHsl("#1F2933"),
+        "secondary-foreground": hexToHsl("#EBF4FA"),
+        muted: hexToHsl("#1F2933"),
+        "muted-foreground": hexToHsl("#9AA5B1"),
+        accent: hexToHsl("#58B0E3"),
+        "accent-foreground": hexToHsl("#141C24"),
+        destructive: hexToHsl("#FC8181"),
+        "destructive-foreground": hexToHsl("#141C24"),
+        border: hexToHsl("#1F2933"),
+        input: hexToHsl("#1F2933"),
+        ring: hexToHsl("#05AD15"),
+      },
+    },
+  },
+  {
+    name: 'COLOR_SCHEME_3',
+    label: 'Blue & Green',
+    colors: {
+      light: {
+        background: hexToHsl("#F8FAFF"),
+        foreground: hexToHsl("#09090B"),
+        card: hexToHsl("#FFFFFF"),
+        "card-foreground": hexToHsl("#09090B"),
+        popover: hexToHsl("#FFFFFF"),
+        "popover-foreground": hexToHsl("#09090B"),
+        primary: hexToHsl("#3C84F6"),
+        "primary-foreground": hexToHsl("#FFFFFF"),
+        secondary: hexToHsl("#E3E5E8"),
+        "secondary-foreground": hexToHsl("#09090B"),
+        muted: hexToHsl("#E3E5E8"),
+        "muted-foreground": hexToHsl("#71717A"),
+        accent: hexToHsl("#06AD2E"),
+        "accent-foreground": hexToHsl("#FFFFFF"),
+        destructive: hexToHsl("#E53E3E"),
+        "destructive-foreground": hexToHsl("#FFFFFF"),
+        border: hexToHsl("#E3E5E8"),
+        input: hexToHsl("#E3E5E8"),
+        ring: hexToHsl("#06AD2E"),
+      },
+      dark: {
+        background: hexToHsl("#09090B"),
+        foreground: hexToHsl("#F8FAFF"),
+        card: hexToHsl("#18181B"),
+        "card-foreground": hexToHsl("#F8FAFF"),
+        popover: hexToHsl("#18181B"),
+        "popover-foreground": hexToHsl("#F8FAFF"),
+        primary: hexToHsl("#3C84F6"),
+        "primary-foreground": hexToHsl("#F8FAFF"),
+        secondary: hexToHsl("#222B36"),
+        "secondary-foreground": hexToHsl("#F8FAFF"),
+        muted: hexToHsl("#222B36"),
+        "muted-foreground": hexToHsl("#A1A1AA"),
+        accent: hexToHsl("#06AD2E"),
+        "accent-foreground": hexToHsl("#F8FAFF"),
+        destructive: hexToHsl("#FC8181"),
+        "destructive-foreground": hexToHsl("#09090B"),
+        border: hexToHsl("#222B36"),
+        input: hexToHsl("#222B36"),
+        ring: hexToHsl("#06AD2E"),
+      },
+    },
+  },
+  {
+    name: 'COLOR_SCHEME_4',
+    label: 'Purple & Pink',
+    colors: {
+      light: {
+        background: hexToHsl("#FFFFFF"),
+        foreground: hexToHsl("#333333"),
+        card: hexToHsl("#FFFFFF"),
+        "card-foreground": hexToHsl("#333333"),
+        popover: hexToHsl("#FFFFFF"),
+        "popover-foreground": hexToHsl("#333333"),
+        primary: hexToHsl("#8B5CF6"),
+        "primary-foreground": hexToHsl("#FFFFFF"),
+        secondary: hexToHsl("#F3F4F6"),
+        "secondary-foreground": hexToHsl("#333333"),
+        muted: hexToHsl("#F3F4F6"),
+        "muted-foreground": hexToHsl("#777777"),
+        accent: hexToHsl("#EC4899"),
+        "accent-foreground": hexToHsl("#FFFFFF"),
+        destructive: hexToHsl("#EF4444"),
+        "destructive-foreground": hexToHsl("#FFFFFF"),
+        border: hexToHsl("#DDDDDD"),
+        input: hexToHsl("#DDDDDD"),
+        ring: hexToHsl("#EC4899"),
+      },
+      dark: {
+        background: hexToHsl("#1E1E2E"),
+        foreground: hexToHsl("#F0F0F0"),
+        card: hexToHsl("#25253A"),
+        "card-foreground": hexToHsl("#F0F0F0"),
+        popover: hexToHsl("#25253A"),
+        "popover-foreground": hexToHsl("#F0F0F0"),
+        primary: hexToHsl("#A78BFA"),
+        "primary-foreground": hexToHsl("#1E1E2E"),
+        secondary: hexToHsl("#3A3A4C"),
+        "secondary-foreground": hexToHsl("#F0F0F0"),
+        muted: hexToHsl("#3A3A4C"),
+        "muted-foreground": hexToHsl("#B0B0B0"),
+        accent: hexToHsl("#F472B6"),
+        "accent-foreground": hexToHsl("#1E1E2E"),
+        destructive: hexToHsl("#F87171"),
+        "destructive-foreground": hexToHsl("#1E1E2E"),
+        border: hexToHsl("#3A3A4C"),
+        input: hexToHsl("#3A3A4C"),
+        ring: hexToHsl("#F472B6"),
+      },
+    },
+  },
+  {
+    name: 'COLOR_SCHEME_5',
+    label: 'Orange & Gold',
+    colors: {
+      light: {
+        background: hexToHsl("#FCFBF5"),
+        foreground: hexToHsl("#5C4B4B"),
+        card: hexToHsl("#FFFFFF"),
+        "card-foreground": hexToHsl("#5C4B4B"),
+        popover: hexToHsl("#FFFFFF"),
+        "popover-foreground": hexToHsl("#5C4B4B"),
+        primary: hexToHsl("#E77727"),
+        "primary-foreground": hexToHsl("#FFFFFF"),
+        secondary: hexToHsl("#EFEAE2"),
+        "secondary-foreground": hexToHsl("#5C4B4B"),
+        muted: hexToHsl("#EFEAE2"),
+        "muted-foreground": hexToHsl("#8B8077"),
+        accent: hexToHsl("#B3A16D"),
+        "accent-foreground": hexToHsl("#FFFFFF"),
+        destructive: hexToHsl("#D9534F"),
+        "destructive-foreground": hexToHsl("#FFFFFF"),
+        border: hexToHsl("#EFEAE2"),
+        input: hexToHsl("#EFEAE2"),
+        ring: hexToHsl("#B3A16D"),
+      },
+      dark: {
+        background: hexToHsl("#362C2C"),
+        foreground: hexToHsl("#FDF8F0"),
+        card: hexToHsl("#4F4040"),
+        "card-foreground": hexToHsl("#FDF8F0"),
+        popover: hexToHsl("#4F4040"),
+        "popover-foreground": hexToHsl("#FDF8F0"),
+        primary: hexToHsl("#FF9944"),
+        "primary-foreground": hexToHsl("#362C2C"),
+        secondary: hexToHsl("#4F4040"),
+        "secondary-foreground": hexToHsl("#FDF8F0"),
+        muted: hexToHsl("#4F4040"),
+        "muted-foreground": hexToHsl("#C4B9B0"),
+        accent: hexToHsl("#D4C29D"),
+        "accent-foreground": hexToHsl("#362C2C"),
+        destructive: hexToHsl("#F98B87"),
+        "destructive-foreground": hexToHsl("#362C2C"),
+        border: hexToHsl("#4F4040"),
+        input: hexToHsl("#4F4040"),
+        ring: hexToHsl("#D4C29D"),
+      },
+    },
+  },
+  {
+    name: 'COLOR_SCHEME_6',
+    label: 'Professional Blue',
+    colors: {
+      light: {
+        background: hexToHsl("#F8F8F8"),
+        foreground: hexToHsl("#2D3748"),
+        card: hexToHsl("#FFFFFF"),
+        "card-foreground": hexToHsl("#2D3748"),
+        popover: hexToHsl("#FFFFFF"),
+        "popover-foreground": hexToHsl("#2D3748"),
+        primary: hexToHsl("#3B82F6"),
+        "primary-foreground": hexToHsl("#FFFFFF"),
+        secondary: hexToHsl("#E2E8F0"),
+        "secondary-foreground": hexToHsl("#2D3748"),
+        muted: hexToHsl("#E2E8F0"),
+        "muted-foreground": hexToHsl("#718096"),
+        accent: hexToHsl("#10B981"),
+        "accent-foreground": hexToHsl("#FFFFFF"),
+        destructive: hexToHsl("#EF4444"),
+        "destructive-foreground": hexToHsl("#FFFFFF"),
+        border: hexToHsl("#E2E8F0"),
+        input: hexToHsl("#E2E8F0"),
+        ring: hexToHsl("#10B981"),
+      },
+      dark: {
+        background: hexToHsl("#1A202C"),
+        foreground: hexToHsl("#E2E8F0"),
+        card: hexToHsl("#2D3748"),
+        "card-foreground": hexToHsl("#E2E8F0"),
+        popover: hexToHsl("#2D3748"),
+        "popover-foreground": hexToHsl("#E2E8F0"),
+        primary: hexToHsl("#63B3ED"),
+        "primary-foreground": hexToHsl("#1A202C"),
+        secondary: hexToHsl("#2D3748"),
+        "secondary-foreground": hexToHsl("#E2E8F0"),
+        muted: hexToHsl("#2D3748"),
+        "muted-foreground": hexToHsl("#A0AEC0"),
+        accent: hexToHsl("#48BB78"),
+        "accent-foreground": hexToHsl("#1A202C"),
+        destructive: hexToHsl("#F87171"),
+        "destructive-foreground": hexToHsl("#1A202C"),
+        border: hexToHsl("#2D3748"),
+        input: hexToHsl("#2D3748"),
+        ring: hexToHsl("#48BB78"),
+      },
+    },
+  },
+];
