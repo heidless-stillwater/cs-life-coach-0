@@ -24,7 +24,7 @@ const testimonials = [
   {
     name: 'Alex Johnson',
     title: 'Software Engineer',
-    quote: "Best Day Coaching transformed my approach to work. I'm more focused, less stressed, and my career is on an upward trajectory.",
+    quote: "Chill Coaching transformed my approach to work. I'm more focused, less stressed, and my career is on an upward trajectory.",
     avatar: 'AJ',
   },
   {
@@ -60,7 +60,7 @@ export default function Home() {
             <div>
               <h2 className="text-3xl font-bold font-headline mb-4">Why Choose Us?</h2>
               <p className="text-muted-foreground mb-6">
-                At Best Day Coaching, we believe in a holistic approach. We don't just focus on your career; we focus on you. Our goal is to empower you with the tools and mindset to thrive in all areas of your life.
+                At Chill Coaching, we believe in a holistic approach. We don't just focus on your career; we focus on you. Our goal is to empower you with the tools and mindset to thrive in all areas of your life.
               </p>
               <ul className="space-y-4">
                 <li className="flex items-center gap-4">

@@ -9,7 +9,7 @@ export function Footer() {
           <div className="flex flex-col gap-4 pr-8">
             <Link href="/" className="flex items-center gap-2">
               <Sun className="h-6 w-6 text-accent" />
-              <span className="font-bold text-xl font-headline">Best Day Coaching</span>
+              <span className="font-bold text-xl font-headline">Chill Coaching</span>
             </Link>
             <p className="text-muted-foreground text-sm">
               Helping you achieve your best day, every day.
@@ -36,7 +36,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-border/40 text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Best Day Coaching. All rights reserved.
+          © {new Date().getFullYear()} Chill Coaching. All rights reserved.
         </div>
       </div>
     </footer>
