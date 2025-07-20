@@ -6,7 +6,7 @@ import { Footer } from '@/components/footer';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'Chill Coaching',
+  title: 'Best Day Coaching',
   description: 'Helping you achieve your best day, every day.',
   icons: {
     icon: '/favicon.ico',

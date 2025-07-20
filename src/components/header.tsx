@@ -59,7 +59,7 @@ export function Header() {
       <div className="container flex h-20 max-w-7xl items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <Sun className="h-6 w-6 text-accent" />
-          <span className="font-bold text-[28px] font-headline">Chill Coaching</span>
+          <span className="font-bold text-[28px] font-headline">Best Day Coaching</span>
         </Link>
         
         <nav className="hidden md:flex items-center gap-6">
@@ -147,7 +147,7 @@ export function Header() {
                  <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
                  <Link href="/" className="flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
                     <Sun className="h-6 w-6 text-accent" />
-                    <span className="font-bold font-headline">Chill Coaching</span>
+                    <span className="font-bold font-headline">Best Day Coaching</span>
                 </Link>
               </SheetHeader>
               <div className="flex flex-col h-full px-6 pb-6">
