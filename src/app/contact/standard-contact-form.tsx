@@ -61,7 +61,7 @@ export function StandardContactForm() {
           </div>
           <div className="space-y-2">
             <Label htmlFor="email">Email Address</Label>
-            <Input id="email" name="email" type="email" placeholder="john.doe@example.com" required />
+            <Input id="email" name="email" type="email" placeholder="your.email@example.com" required />
           </div>
           <div className="space-y-2">
             <Label htmlFor="message">Your Message</Label>

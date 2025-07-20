@@ -26,8 +26,8 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold">Email</h3>
-                  <a href="mailto:test@test.com" className="text-muted-foreground hover:text-primary transition-colors">
-                    test@test.com
+                  <a href="mailto:chill@test.com" className="text-muted-foreground hover:text-primary transition-colors">
+                    chill@test.com
                   </a>
                 </div>
               </div>
@@ -37,8 +37,8 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold">Phone</h3>
-                  <a href="tel:11112223333" className="text-muted-foreground hover:text-primary transition-colors">
-                    1111-222-3333
+                  <a href="tel:0123345567" className="text-muted-foreground hover:text-primary transition-colors">
+                    0123 345 567
                   </a>
                 </div>
               </div>
@@ -48,7 +48,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold">Address</h3>
-                  <p className="text-muted-foreground">Woodberry Down, London N4 2TG</p>
+                  <p className="text-muted-foreground">Proxima Centauri, London N4 2TG</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -57,8 +57,8 @@ export default function ContactPage() {
                   </div>
                 <div>
                   <h3 className="text-lg font-semibold">Website</h3>
-                  <a href="https://website.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                    website.com
+                  <a href="https://chilled-coaching.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                    chilled-coaching.com
                   </a>
                 </div>
               </div>
