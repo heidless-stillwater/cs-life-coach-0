@@ -27,6 +27,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { aiFunctions } from '@/lib/ai-functions';
+import { ColorSchemeToggle } from '@/components/color-scheme-toggle';
 
 const mainLinks = [
   { href: '/about', label: 'About' },
@@ -57,6 +58,9 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="bg-secondary text-secondary-foreground py-2 text-center text-sm font-semibold">
+        <ColorSchemeToggle />
+      </div>
       <div className="container flex h-20 max-w-7xl items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <Sun className="h-6 w-6 text-accent" />
