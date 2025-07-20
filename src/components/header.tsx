@@ -129,7 +129,7 @@ export function Header() {
 
         <div className="hidden md:flex items-center gap-4">
             <ThemeToggle />
-            <Button asChild className="font-bold text-[15px]">
+            <Button asChild className="font-bold text-[20px]">
               <Link href="/contact">Start Here</Link>
             </Button>
         </div>
