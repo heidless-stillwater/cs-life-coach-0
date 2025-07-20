@@ -70,7 +70,7 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  'font-medium transition-colors hover:text-primary text-[20px]',
+                  'font-medium transition-colors hover:text-primary text-[30px]',
                   isActive ? 'text-primary font-bold' : 'text-muted-foreground'
                 )}
               >
@@ -82,7 +82,7 @@ export function Header() {
               <DropdownMenuTrigger asChild>
                 <button
                   className={cn(
-                    'flex items-center gap-1 font-medium transition-colors hover:text-primary text-[20px]',
+                    'flex items-center gap-1 font-medium transition-colors hover:text-primary text-[30px]',
                     pathname.startsWith('/admin') ? 'text-primary font-bold' : 'text-muted-foreground'
                   )}
                 >
@@ -129,7 +129,7 @@ export function Header() {
 
         <div className="hidden md:flex items-center gap-4">
             <ThemeToggle />
-            <Button asChild className="font-bold text-[20px]">
+            <Button asChild className="font-bold text-[40px]">
               <Link href="/contact">Start Here</Link>
             </Button>
         </div>
