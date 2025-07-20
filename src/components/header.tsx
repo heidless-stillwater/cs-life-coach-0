@@ -59,7 +59,7 @@ export function Header() {
       <div className="container flex h-20 max-w-7xl items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <Sun className="h-6 w-6 text-accent" />
-          <span className="font-bold text-[28px] font-headline">Best Day Coaching</span>
+          <span className="font-bold text-[28px] font-headline">-Best Day Coaching</span>
         </Link>
         
         <nav className="hidden md:flex items-center gap-6">
@@ -70,7 +70,7 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  'font-medium transition-colors hover:text-primary text-[10px]',
+                  'font-medium transition-colors hover:text-primary text-[20px]',
                   isActive ? 'text-primary font-bold' : 'text-muted-foreground'
                 )}
               >
@@ -82,7 +82,7 @@ export function Header() {
               <DropdownMenuTrigger asChild>
                 <button
                   className={cn(
-                    'flex items-center gap-1 font-medium transition-colors hover:text-primary text-[10px]',
+                    'flex items-center gap-1 font-medium transition-colors hover:text-primary text-[20px]',
                     pathname.startsWith('/admin') ? 'text-primary font-bold' : 'text-muted-foreground'
                   )}
                 >
@@ -129,7 +129,7 @@ export function Header() {
 
         <div className="hidden md:flex items-center gap-4">
             <ThemeToggle />
-            <Button asChild className="font-bold text-[20px]">
+            <Button asChild className="font-bold text-[10px]">
               <Link href="/contact">Start Here</Link>
             </Button>
         </div>
@@ -147,7 +147,7 @@ export function Header() {
                  <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
                  <Link href="/" className="flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
                     <Sun className="h-6 w-6 text-accent" />
-                    <span className="font-bold font-headline">Best Day Coaching</span>
+                    <span className="font-bold font-headline">-Best Day Coaching</span>
                 </Link>
               </SheetHeader>
               <div className="flex flex-col h-full px-6 pb-6">
