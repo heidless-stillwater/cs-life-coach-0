@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Sun, Menu, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { ThemeToggle } from '@/components/theme-toggle';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import {
   DropdownMenu,
@@ -27,7 +26,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { aiFunctions } from '@/lib/ai-functions';
-import { ColorSchemeToggle } from '@/components/color-scheme-toggle';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 const mainLinks = [
   { href: '/about', label: 'About' },
@@ -58,9 +57,6 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="bg-secondary text-secondary-foreground py-2 text-center text-sm font-semibold">
-        <ColorSchemeToggle />
-      </div>
       <div className="container flex h-20 max-w-7xl items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <Sun className="h-6 w-6 text-accent" />
@@ -139,7 +135,7 @@ export function Header() {
             </Button>
         </div>
 
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center gap-2">
           <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="outline" size="icon">
@@ -240,7 +236,7 @@ export function Header() {
                   </Accordion>
                 </nav>
                 <div className="mt-auto flex flex-col gap-4">
-                  <div className="flex justify-center pt-8">
+                  <div className="flex justify-center">
                     <ThemeToggle />
                   </div>
                   <Button asChild size="lg" className="font-bold" onClick={() => setIsMenuOpen(false)}>
