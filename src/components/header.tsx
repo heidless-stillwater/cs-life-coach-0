@@ -129,7 +129,6 @@ export function Header() {
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
-            <ThemeToggle />
             <Button asChild className="font-bold text-[20px]">
               <Link href="/contact">Start Here</Link>
             </Button>
@@ -236,7 +235,6 @@ export function Header() {
                   </Accordion>
                 </nav>
                 <div className="mt-auto flex flex-col gap-4">
-                  <ThemeToggle />
                   <Button asChild size="lg" className="font-bold" onClick={() => setIsMenuOpen(false)}>
                       <Link href="/contact">Start Here</Link>
                   </Button>
