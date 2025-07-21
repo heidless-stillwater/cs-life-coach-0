@@ -26,7 +26,6 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { aiFunctions } from '@/lib/ai-functions';
-import { ThemeToggle } from './theme-toggle';
 
 const mainLinks = [
   { href: '/about', label: 'About' },
@@ -129,14 +128,12 @@ export function Header() {
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
-            <ThemeToggle />
             <Button asChild className="font-bold text-[20px]">
               <Link href="/contact">Start Here</Link>
             </Button>
         </div>
 
         <div className="md:hidden flex items-center gap-2">
-          <ThemeToggle />
           <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="outline" size="icon">
