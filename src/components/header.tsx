@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Sun, Menu, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { ThemeToggle } from '@/components/theme-toggle';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import {
   DropdownMenu,
@@ -129,7 +128,6 @@ export function Header() {
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
-            <ThemeToggle />
             <Button asChild className="font-bold text-[20px]">
               <Link href="/contact">Start Here</Link>
             </Button>
@@ -236,9 +234,6 @@ export function Header() {
                   </Accordion>
                 </nav>
                 <div className="mt-auto flex flex-col gap-4">
-                  <div className="flex justify-center pt-8">
-                    <ThemeToggle />
-                  </div>
                   <Button asChild size="lg" className="font-bold" onClick={() => setIsMenuOpen(false)}>
                       <Link href="/contact">Start Here</Link>
                   </Button>
